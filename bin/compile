@@ -2,9 +2,9 @@
 
 set -e
 
-mkdir -p "bin/"
-mkdir -p "logs/"
-mkdir -p "files/"
+mkdir -p "$1/bin/"
+mkdir -p "$1/logs/"
+mkdir -p "$1/files/"
 export H2O_ACCESS_LOG_PATH="logs/access.log"
 export H2O_ERROR_LOG_PATH="logs/error.log"
 export H2O_PID_PATH="$1/pid"

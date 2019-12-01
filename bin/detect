@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+echo 'h2o-buildpack'
+exit 0
+

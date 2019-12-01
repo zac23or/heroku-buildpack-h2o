@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p "$1/bin/"
+mkdir -p "$1/logs/"
+mkdir -p "$1/files/"
+export H2O_ACCESS_LOG_PATH="$1/logs/access.log"
+export H2O_ERROR_LOG_PATH="$1/logs/error.log"
+export H2O_PID_PATH="$1/pid"
+export H2O_FILE_DIR_PATH="$1/files"
+export H2O_MRUBY_APP_PATH="$1/app.rb"
+
+export H2O="$1/bin/h2o"
+export H2O_CONFIG="$1/config/config.yml"
+echo "-----> h2o-buildpack: Installed h2o app/bin"
+cp "bin/h2o-$STACK" "$1/bin/h2o"
+echo '-----> h2o-buildpack: Added start-h2o to app/bin'
+erb "bin/start.erb" >  "$1/bin/start"
+echo '-----> h2o-buildpack: Added stop-h2o to app/bin'
+erb "bin/stop.erb" >  "$1/bin/stop"
+
+mkdir -p "$1/config"
+erb "config/config.yml.erb" >  "$1/config/config.yml"

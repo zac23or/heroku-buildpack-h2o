@@ -1,0 +1,12 @@
+export PATH=$PATH:/app/vendor/cmake/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/cmake/lib
+export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/cmake/lib
+export CPATH=$CPATH:/app/vendor/cmake/include
+export PATH=$PATH:/app/vendor/cmake/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/cmake/lib
+export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/cmake/lib
+export CPATH=$CPATH:/app/vendor/cmake/include
+export PATH=$PATH:/app/vendor/cmake/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/cmake/lib
+export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/cmake/lib
+export CPATH=$CPATH:/app/vendor/cmake/include

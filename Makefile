@@ -13,5 +13,5 @@ build-heroku-18:
 	@docker run -v $(shell pwd):/buildpack --rm -it -e "STACK=heroku-18" -w /buildpack heroku/heroku:18-build scripts/build_h2o /buildpack/bin/h2o-heroku-18
 
 shell:
-	@echo "Opening cedar-14 shell..."
-	@docker run -v $(shell pwd):/buildpack --rm -it -e "STACK=cedar-14" -e "PORT=5000" -w /buildpack heroku/heroku:16 bash
+	@echo "Opening heroku-18 shell..."
+	@docker run -v $(shell pwd):/buildpack --rm -it -e "STACK=heroku-18" -e "PORT=5000" -w /buildpack heroku/heroku:18 bash

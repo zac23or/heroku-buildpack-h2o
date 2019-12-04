@@ -1,5 +1,5 @@
 listen:
-  port: <%= ENV['PORT']%>
+  port: !env PORT
 hosts:
   0.0.0.0:
     paths:

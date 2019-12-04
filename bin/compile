@@ -22,6 +22,13 @@ echo '-----> h2o-buildpack: Added stop-h2o to app/bin'
 erb "bin/stop.erb" >  "$1/bin/stop"
 echo '-----> h2o-buildpack: coping mruby'
 cp -r 'share/h2o/mruby' "$1/share/h2o"
-
+echo  $1/config.yml
 mkdir -p "$1/config"
-cp "config/config.yml.erb" "$1/config/config.yml.erb"
+
+if [[ -f $1/config.yml ]]; then
+  echo '-----> h2o-buildpack: coping custom config.yml'
+	cp config.yml "$1/config/"
+else
+  echo '-----> h2o-buildpack: coping default config.yml'
+  cp "config/config.yml" "$1/config/config.yml"
+fi

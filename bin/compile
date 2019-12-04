@@ -17,7 +17,7 @@ export H2O_CONFIG="config/config.yml"
 echo "-----> h2o-buildpack: Installed h2o app/bin"
 cp "bin/h2o-$STACK" "$1/bin/h2o"
 echo '-----> h2o-buildpack: Added start-h2o to app/bin'
-cp "bin/start.erb"  "$1/bin/start.erb"
+erb "bin/start.erb" > "$1/bin/start"
 echo '-----> h2o-buildpack: Added stop-h2o to app/bin'
 erb "bin/stop.erb" >  "$1/bin/stop"
 echo '-----> h2o-buildpack: coping mruby'

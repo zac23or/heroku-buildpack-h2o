@@ -27,7 +27,7 @@ mkdir -p "$1/config"
 
 if [[ -f $1/config.yml ]]; then
   echo '-----> h2o-buildpack: coping custom config.yml'
-	cp config.yml "$1/config/"
+	cp "$1/config.yml" "$1/config/"
 else
   echo '-----> h2o-buildpack: coping default config.yml'
   cp "config/config.yml" "$1/config/config.yml"

@@ -3,7 +3,7 @@
 set -e
 
 mkdir -p "$1/bin/"
-mkdir -p "$1/logs/"
+mkdir -p "$1/logs/h2o"
 mkdir -p "$1/files/"
 mkdir -p "$1/share/h2o/"
 export H2O_ACCESS_LOG_PATH="logs/access.log"

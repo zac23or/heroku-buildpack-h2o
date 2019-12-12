@@ -1,1 +1,3 @@
+(tail -qF -n 0 logs/h2o/*.log)&
+
 H2O_ROOT=. <%=ENV['H2O']%> -c <%=ENV['H2O_CONFIG']%>

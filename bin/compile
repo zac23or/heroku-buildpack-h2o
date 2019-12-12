@@ -3,17 +3,16 @@
 set -e
 
 mkdir -p "$1/bin/"
-mkdir -p "$1/logs/h2o"
-mkdir -p "$1/files/"
+mkdir -p "$1/logs/h2o/"
+touch "$1/logs/h2o/access.log"
+touch "$1/logs/h2o/error.log"
 mkdir -p "$1/share/h2o/"
-export H2O_ACCESS_LOG_PATH="logs/access.log"
-export H2O_ERROR_LOG_PATH="logs/error.log"
+
 export H2O_PID_PATH="$1/pid"
-export H2O_FILE_DIR_PATH="files"
+touch "$1/pid"
 export H2O_MRUBY_APP_PATH="app.rb"
 
 export H2O="bin/h2o"
-export H2O_CONFIG="config/config.yml"
 echo "-----> h2o-buildpack: Installed h2o app/bin"
 cp "bin/h2o-$STACK" "$1/bin/h2o"
 echo '-----> h2o-buildpack: Added start-h2o to app/bin'

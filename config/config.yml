@@ -3,9 +3,8 @@ listen:
 hosts:
   0.0.0.0:
     paths:
-      /:
-        file.dir: <%= ENV['H2O_FILE_DIR_PATH'] %>
       /app: 
-        mruby.handler-file: <%= ENV['H2O_MRUBY_APP_PATH'] %> 
-access-log: <%= ENV['H2O_ACCESS_LOG_PATH'] || 'logs/h2o/access.log' %>  
-error-log: <%= ENV['H2O_ERROR_LOG_PATH'] || 'logs/h2o/error.log' %>  
+        mruby.handler-file: 'app.rb' 
+access-log: 'logs/h2o/access.log' %>  
+error-log: 'logs/h2o/error.log' %>  
+pid-file: './pid'

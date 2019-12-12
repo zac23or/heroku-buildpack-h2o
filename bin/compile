@@ -11,6 +11,7 @@ mkdir -p "$1/share/h2o/"
 export H2O_PID_PATH="$1/pid"
 touch "$1/pid"
 export H2O_MRUBY_APP_PATH="app.rb"
+export H2O_CONFIG="config/config.yml"
 
 export H2O="bin/h2o"
 echo "-----> h2o-buildpack: Installed h2o app/bin"

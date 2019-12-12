@@ -9,7 +9,13 @@
 # Once the dyno has is 'up' you can open your browser and navigate
 # this dyno's directory structure to download the nginx binary.
 apt update
-apt install --assume-yes cmake
+apt install --assume-yes zlib1g-dev
+apt-get install --assume-yes libssl-dev
+apt-get install --assume-yes build-essential
+apt-get install --assume-yes libpq-dev
+apt-get install --assume-yes cmake
+apt-get install --assume-yes pkg-config
+apt-get install --assume-yes bison
 
 temp_dir=$(mktemp -d /tmp/h2o.XXXX)
 
@@ -18,9 +24,9 @@ mkdir h2o
 echo "Temp dir: $temp_dir"
 
 echo "cloning h2o"
-git clone https://github.com/h2o/h2o.git
+git clone https://github.com/everton/h2o
 cd h2o
-cmake .
+cmake . -DEXTRA_LIBS=pq -DWITH_MRUBY=on
 make 
 make install
 

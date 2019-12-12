@@ -5,6 +5,6 @@ hosts:
     paths:
       /app: 
         mruby.handler-file: 'app.rb' 
-access-log: 'logs/h2o/access.log' %>  
-error-log: 'logs/h2o/error.log' %>  
+access-log: 'logs/h2o/access.log'
+error-log: 'logs/h2o/error.log'
 pid-file: './pid'

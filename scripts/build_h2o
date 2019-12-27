@@ -24,11 +24,15 @@ mkdir h2o
 echo "Temp dir: $temp_dir"
 
 echo "cloning h2o"
-git clone https://github.com/everton/h2o
+git clone https://github.com/h2o/h2o
 cd h2o
-cmake . -DEXTRA_LIBS=pq -DWITH_MRUBY=on
+cd deps
+git clone https://github.com/authorNari/mruby-pg.git
+git clone https://github.com/baldowl/mruby-bcrypt.git
+cd ..
+cmake . -DEXTRA_LIBS=pq
 make 
 make install
 
 
-cp ./h2o $1
+cp ./h2o /buildpack/bin/h2o-heroku-18
